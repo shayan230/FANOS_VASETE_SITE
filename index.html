@@ -1,52 +1,114 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>واسطه فانوس</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: url('https://i.postimg.cc/wvLsCDpL/419feb10-f3b3-11ef-aaad-718cf67f1894.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            text-align: center;
-        }
-        .overlay {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            min-height: 100vh;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 20px 0;
-            border: 2px solid yellow;
-            border-radius: 10px;
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-        }
-        .button:hover {
-            background: yellow;
-            color: black;
-        }
-        .link {
-            color: white;
-            font-weight: bold;
-            font-size: 22px;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>واسطه فانوس</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: url('https://i.postimg.cc/wvLsCDpL/419feb10-f3b3-11ef-aaad-718cf67f1894.webp') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .button {
+      margin: 20px 0;
+      padding: 10px 20px;
+      border: 2px solid yellow;
+      border-radius: 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .menu-icon {
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: rgba(0,0,0,0.9);
+      padding: 10px;
+      border-radius: 10px;
+      text-align: right;
+    }
+
+    .menu a {
+      display: block;
+      color: white;
+      padding: 5px 0;
+      text-decoration: none;
+    }
+
+    .menu a:hover {
+      color: yellow;
+    }
+
+    .contact {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <div class="overlay">
-        <h1>به سایت واسطه فانوس خوش آمدید</h1>
-        <a href="#" class="button">کالاف دیوتی</a>
-        <p>برای سفارش و ارتباط با ما به آیدی روبیکای زیر پیام دهید:</p>
-        <a href="https://rubika.ir/FANOS_VASETE" class="link" target="_blank">@FANOS_VASETE</a>
+
+  <div class="navbar">
+    <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+    <div id="menu" class="menu">
+      <a href="#">صفحه اصلی</a>
+      <a href="#">اکانت کالاف</a>
+      <a href="#">سی پی فانوس</a>
+      <a href="#">درباره ما</a>
+      <a href="#">ارتباط با ما</a>
     </div>
+  </div>
+
+  <div class="overlay">
+    <h1>به سایت واسطه فانوس خوش آمدید</h1>
+    <a href="#" class="button">کالاف دیوتی</a>
+    <p>برای سفارش و ارتباط با ما به آیدی روبیکای زیر پیام دهید:</p>
+    <p class="contact">@FANOS_VASETE</p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById('menu');
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'block';
+      }
+    }
+  </script>
+
 </body>
 </html>
