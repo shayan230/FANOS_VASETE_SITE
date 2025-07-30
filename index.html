@@ -8,40 +8,45 @@
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
             background: url('https://i.postimg.cc/wvLsCDpL/419feb10-f3b3-11ef-aaad-718cf67f1894.jpg') no-repeat center center fixed;
             background-size: cover;
-            font-family: Tahoma, sans-serif;
-            text-align: center;
             color: white;
+            text-align: center;
         }
         .overlay {
-            background-color: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
         .button {
+            display: inline-block;
             padding: 10px 20px;
+            margin: 20px 0;
             border: 2px solid yellow;
             border-radius: 10px;
             color: white;
-            background: transparent;
-            font-size: 20px;
-            margin-top: 20px;
+            font-size: 18px;
+            text-decoration: none;
         }
-        h1, h2 {
-            text-shadow: 2px 2px 4px black;
+        .button:hover {
+            background: yellow;
+            color: black;
+        }
+        .link {
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <div class="overlay">
         <h1>به سایت واسطه فانوس خوش آمدید</h1>
-        <button class="button">کالاف دیوتی</button>
-        <h2>برای سفارش و ارتباط با ما به آیدی روبیکای زیر پیام دهید:</h2>
-        <h2>@FANOS_VASETE</h2>
+        <a href="#" class="button">کالاف دیوتی</a>
+        <p>برای سفارش و ارتباط با ما به آیدی روبیکای زیر پیام دهید:</p>
+        <a href="https://rubika.ir/FANOS_VASETE" class="link" target="_blank">@FANOS_VASETE</a>
     </div>
 </body>
 </html>
