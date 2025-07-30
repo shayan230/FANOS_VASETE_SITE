@@ -7,131 +7,85 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
-            font-family: Tahoma, sans-serif;
-            background: url('https://s6.uupload.ir/filelink/Nb73Xs8KKBwX_21e95b4921/419feb10-f3b3-11ef-aaad-718cf67f1894_5sqb.webp') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-        }
-        .navbar {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            z-index: 10;
+            font-family: 'Vazir', sans-serif;
+            background: #000;
+            color: #fff;
+            text-align: center;
         }
         .menu-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
             font-size: 30px;
             cursor: pointer;
         }
-        .title {
-            font-size: 20px;
-        }
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 6vw;
-            margin: 0;
-            text-shadow: 2px 2px 5px black;
-        }
-        .button {
-            padding: 10px 20px;
-            border: 2px solid yellow;
-            border-radius: 10px;
-            color: white;
-            text-decoration: none;
-            font-size: 5vw;
-            margin-top: 20px;
-            background: rgba(0, 0, 0, 0.3);
-        }
-        p {
-            font-size: 4vw;
-            margin-top: 20px;
-            text-shadow: 1px 1px 3px black;
-        }
-        .sidemenu {
-            height: 100%;
-            width: 0;
+        .sidebar {
             position: fixed;
             top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            transition: right 0.3s ease;
+            padding: 20px;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+        }
+        .sidebar.open {
             right: 0;
-            background-color: rgba(0, 0, 0, 0.9);
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-            z-index: 20;
         }
-        .sidemenu a {
-            padding: 10px 30px;
-            text-decoration: none;
-            font-size: 20px;
-            color: white;
+        .sidebar a {
             display: block;
-            transition: 0.3s;
-        }
-        .sidemenu a:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-        .sidemenu .closebtn {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 30px;
-            cursor: pointer;
-        }
-        .rubika-link {
-            color: #ffffff;
+            color: #fff;
             text-decoration: none;
-            font-size: 5vw;
-            padding: 10px 20px;
-            border: 2px solid yellow;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.3);
-            display: inline-block;
-            margin-top: 20px;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+        }
+        .overlay.active {
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <div class="title">واسطه فانوس</div>
-        <div class="menu-icon" onclick="openNav()">&#9776;</div>
-    </div>
+    <div class="menu-icon" id="menuIcon">☰</div>
 
-    <div id="mySidemenu" class="sidemenu">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">خانه</a>
+    <div class="sidebar" id="sidebar">
+        <a href="#">صفحه اصلی</a>
+        <a href="#">کالاف دیوتی</a>
         <a href="#">درباره ما</a>
-        <a href="#">محصولات</a>
         <a href="#">تماس با ما</a>
     </div>
 
-    <div class="content">
-        <h1>به سایت واسطه فانوس خوش آمدید</h1>
-        <a href="#" class="button">کالاف دیوتی</a>
-        <p>برای سفارش و ارتباط با ما به آیدی روبیکای زیر پیام دهید:</p>
-        <a href="https://rubika.ir/FANOS_VASETE" class="rubika-link">@FANOS_VASETE</a>
-    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <h1>به سایت واسطه فانوس خوش آمدید</h1>
+    <button>کالاف دیوتی</button>
+    <p>@FANOS_VASETE</p>
 
     <script>
-        function openNav() {
-            document.getElementById("mySidemenu").style.width = "250px";
-        }
+        const menuIcon = document.getElementById('menuIcon');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
 
-        function closeNav() {
-            document.getElementById("mySidemenu").style.width = "0";
-        }
-    </
+        menuIcon.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+    </script>
+
+</body>
+</html>
