@@ -7,155 +7,142 @@
     <style>
         body {
             margin: 0;
-            font-family: Tahoma, sans-serif;
-            background: #000;
-            color: #fff;
-            text-align: center;
+            font-family: sans-serif;
+            background: url('https://s6.uupload.ir/files/419feb10-f3b3-11ef-aaad-718cf67f1894_5sqb_diel.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
             direction: rtl;
         }
 
-        .main-section {
-            position: relative;
-            background: url('https://s6.uupload.ir/files/419feb10-f3b3-11ef-aaad-718cf67f1894_5sqb_diel.webp') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 20px;
-        }
-
-        .main-section h1 {
-            font-size: 24px;
-            background: rgba(0,0,0,0.5);
-            padding: 10px 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .main-buttons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border: 2px solid #fff;
-            border-radius: 10px;
-            background: rgba(0,0,0,0.4);
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background: rgba(255,255,255,0.2);
-            transform: scale(1.05);
-        }
-
-        .about-section {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            padding: 20px;
-            margin: 50px 20px;
             border-radius: 15px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
+            margin-top: 60px;
         }
 
-        .about-section.show {
-            opacity: 1;
-            transform: translateY(0);
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            border: 1px solid white;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .about {
+            margin: 50px auto;
+            max-width: 400px;
+            background-color: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 15px;
+            line-height: 1.7;
+            text-align: center;
         }
 
         .menu-icon {
-            position: absolute;
+            position: fixed;
             top: 20px;
-            right: 20px;
-            font-size: 30px;
+            left: 20px;
             cursor: pointer;
-            z-index: 1000;
+            z-index: 999;
         }
 
-        .menu {
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 6px 0;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
             position: fixed;
             top: 0;
-            right: -250px;
-            width: 200px;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            left: 0;
+            background-color: rgba(0,0,0,0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
             padding-top: 60px;
-            transition: right 0.3s ease;
+            text-align: center;
         }
 
-        .menu a {
-            color: #fff;
+        .sidebar a {
+            padding: 10px;
             text-decoration: none;
-            margin: 15px 0;
-            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
         }
 
-        .menu.show {
-            right: 0;
+        .sidebar a:hover {
+            background-color: white;
+            color: black;
         }
 
+        .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
-    <div class="main-section">
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-        <h1>به سایت واسطه فانوس خوش آمدید</h1>
-        <div class="main-buttons">
-            <button class="btn">کالاف دیوتی</button>
-            <a href="rubika://user/FANOS_VASETE" class="btn">@FANOS_VASETE</a>
-            <a href="rubika://user/TRUST_FANOS" class="btn">@TRUST_FANOS</a>
-            <a href="rubika://user/HEFAZAT_FANOS" class="btn">@HEFAZAT_FANOS</a>
-        </div>
+    <div class="menu-icon" onclick="openNav()">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
 
-    <div class="about-section">
-        <h2>درباره واسطه فانوس</h2>
-        <p>
-            با سلام خدمت همه مشتری‌های فانوس<br>
-            بنده شایان، ۳ سال در حوزه واسطه‌گری می‌باشم.<br>
-            در بسیاری از بازارهای معتبر فعالیت داشتم و کلی هویت عوض کردم تا امروز با هویت فانوس در کنار شما باشم.<br>
-            هدف من اینه که با کمک شما بریم بالا و معروف بشیم.<br>
-            ممنونم که ما رو برای معامله‌هاتون انتخاب می‌کنید.
-        </p>
-    </div>
-
-    <div class="menu" id="menu">
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#">درباره ما</a>
         <a href="#">اعتماد ما</a>
         <a href="#">استور شاپ</a>
         <a href="#">شایان</a>
     </div>
 
+    <div class="overlay">
+        <h1>به سایت واسطه فانوس خوش آمدید</h1>
+        <a class="button" href="#">کالاف دیوتی</a>
+        <br>
+        <a class="button" href="https://rubika.ir/FANOS_VASETE">@FANOS_VASETE</a>
+        <a class="button" href="https://rubika.ir/TRUST_FANOS">@TRUST_FANOS</a>
+        <a class="button" href="https://rubika.ir/HEFAZAT_FANOS">@HEFAZAT_FANOS</a>
+    </div>
+
+    <div class="about">
+        <h2>درباره ما</h2>
+        <p>
+            با سلام خدمت همه مشتری‌های فانوس.<br>
+            بنده شایان، ۳ سال در حوزه واسطه‌گری فعالیت دارم و در بازارهای معتبر زیادی بودم. 
+            کلی هویت عوض کردم و الان "فانوس" دست منه.
+            هدفم اینه که کنار شما بریم بالا و معروف بشیم.
+            ممنون که ما رو برای معامله‌هاتون انتخاب می‌کنید.
+        </p>
+    </div>
+
     <script>
-        function toggleMenu() {
-            document.getElementById('menu').classList.toggle('show');
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
         }
 
-        window.addEventListener('scroll', () => {
-            const aboutSection = document.querySelector('.about-section');
-            const sectionPosition = aboutSection.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-
-            if(sectionPosition < screenPosition) {
-                aboutSection.classList.add('show');
-            }
-        });
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
     </script>
 
 </body>
