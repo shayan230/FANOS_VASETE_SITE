@@ -56,6 +56,33 @@
             transform: scale(1.05);
         }
 
+        .support-icon {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .support-icon:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        .support-icon img {
+            width: 30px;
+            height: 30px;
+        }
+
         .about-section {
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
@@ -108,7 +135,6 @@
         .menu.show {
             right: 0;
         }
-
     </style>
 </head>
 <body>
@@ -141,6 +167,10 @@
         <a href="#">استور شاپ</a>
         <a href="#">شایان</a>
     </div>
+
+    <a href="rubika://user/ADMIN_FANOS" class="support-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/725/725643.png" alt="پشتیبانی">
+    </a>
 
     <script>
         function toggleMenu() {
