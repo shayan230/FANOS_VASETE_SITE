@@ -12,11 +12,12 @@
             background-size: cover;
             color: #fff;
             text-align: center;
+            direction: rtl;
         }
         .menu-icon {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
             font-size: 30px;
             cursor: pointer;
             z-index: 1001;
@@ -27,7 +28,7 @@
             right: -250px;
             width: 250px;
             height: 100%;
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgba(0,0,0,0.95);
             transition: right 0.3s ease;
             padding: 20px;
             box-shadow: -2px 0 5px rgba(0,0,0,0.5);
@@ -56,28 +57,40 @@
         .overlay.active {
             display: block;
         }
+        .title {
+            margin-top: 30%;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px #000;
+        }
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 0;
-            background: transparent;
-            border: 2px solid #fff;
+            padding: 10px 30px;
+            margin-top: 20px;
+            border: 2px solid #FFD700;
             border-radius: 10px;
             color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .button:hover {
-            background: rgba(255,255,255,0.2);
+            font-size: 18px;
+            background: rgba(0,0,0,0.5);
+            text-decoration: none;
         }
         .tag {
             display: inline-block;
-            padding: 10px 20px;
-            border: 2px solid #fff;
+            padding: 10px 30px;
+            margin-top: 10px;
+            border: 2px solid #FFD700;
             border-radius: 10px;
             font-size: 16px;
-            margin-top: 10px;
             background: rgba(0,0,0,0.5);
+        }
+        .bottom-text {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            text-shadow: 1px 1px 3px #000;
         }
     </style>
 </head>
@@ -88,15 +101,19 @@
     <div class="sidebar" id="sidebar">
         <a href="#">صفحه اصلی</a>
         <a href="#">کالاف دیوتی</a>
-        <a href="#">درباره ما</a>
-        <a href="#">تماس با ما</a>
+        <a href="https://rubika.ir/FANOS_VASETE">@FANOS_VASETE</a>
     </div>
 
     <div class="overlay" id="overlay"></div>
 
-    <h1>به سایت واسطه فانوس خوش آمدید</h1>
-    <button class="button">کالاف دیوتی</button>
+    <div class="title">به سایت واسطه فانوس خوش آمدید</div>
+
+    <a href="#" class="button">کالاف دیوتی</a>
     <div class="tag">@FANOS_VASETE</div>
+
+    <div class="bottom-text">
+        برای سفارش و ارتباط با ما به آیدی روبیکای زیر پیام دهید
+    </div>
 
     <script>
         const menuIcon = document.getElementById('menuIcon');
