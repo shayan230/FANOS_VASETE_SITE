@@ -71,6 +71,7 @@
             cursor: pointer;
             z-index: 999;
             transition: all 0.3s ease;
+            animation: bounce 2s infinite;
         }
 
         .support-icon:hover {
@@ -81,6 +82,12 @@
         .support-icon img {
             width: 30px;
             height: 30px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
 
         .about-section {
@@ -144,9 +151,9 @@
         <h1>به سایت واسطه فانوس خوش آمدید</h1>
         <div class="main-buttons">
             <button class="btn">کالاف دیوتی</button>
-            <a href="rubika://user/FANOS_VASETE" class="btn">@FANOS_VASETE</a>
-            <a href="rubika://user/TRUST_FANOS" class="btn">@TRUST_FANOS</a>
-            <a href="rubika://user/HEFAZAT_FANOS" class="btn">@HEFAZAT_FANOS</a>
+            <a href="https://rubika.ir/FANOS_VASETE" class="btn" target="_blank">@FANOS_VASETE</a>
+            <a href="https://rubika.ir/TRUST_FANOS" class="btn" target="_blank">@TRUST_FANOS</a>
+            <a href="https://rubika.ir/HEFAZAT_FANOS" class="btn" target="_blank">@HEFAZAT_FANOS</a>
         </div>
     </div>
 
@@ -168,9 +175,16 @@
         <a href="#">شایان</a>
     </div>
 
-    <a href="rubika://user/ADMIN_FANOS" class="support-icon">
+    <!-- لینک روبیکا مستقیم (هم لینک عادی و هم intent) -->
+    <a href="https://rubika.ir/ADMIN_FANOS" class="support-icon" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/725/725643.png" alt="پشتیبانی">
     </a>
+    <!-- اگر میخوای به صورت intent باز بشه اینو فعال کن -->
+    <!-- 
+    <a href="intent://user/ADMIN_FANOS#Intent;scheme=rubika;package=ir.resaneh1.iptv;end" class="support-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/725/725643.png" alt="پشتیبانی">
+    </a> 
+    -->
 
     <script>
         function toggleMenu() {
@@ -189,4 +203,4 @@
     </script>
 
 </body>
-</html>
+            </html>
