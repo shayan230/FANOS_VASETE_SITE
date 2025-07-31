@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="fa">
+<!DOCTYPE html><html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,36 @@
             text-align: center;
             direction: rtl;
         }
-
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .menu {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 200px;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+            transition: right 0.3s ease;
+        }
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 18px;
+        }
+        .menu.show {
+            right: 0;
+        }
         .main-section {
             position: relative;
             background: url('https://i.postimg.cc/wvLsCDpL/419feb10-f3b3-11ef-aaad-718cf67f1894.webp') no-repeat center center/cover;
@@ -24,7 +52,6 @@
             align-items: center;
             padding: 20px;
         }
-
         .main-section h1 {
             font-size: 24px;
             background: rgba(0,0,0,0.5);
@@ -32,14 +59,12 @@
             border-radius: 10px;
             margin-bottom: 20px;
         }
-
         .main-buttons {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 10px;
         }
-
         .btn {
             padding: 10px 20px;
             border: 2px solid #fff;
@@ -50,12 +75,10 @@
             font-size: 18px;
             transition: all 0.3s ease;
         }
-
         .btn:hover {
             background: rgba(255,255,255,0.2);
             transform: scale(1.05);
         }
-
         .about-section {
             background: rgba(255, 255, 255, 0.1);
             color: #fff;
@@ -69,40 +92,70 @@
             transform: translateY(50px);
             transition: all 0.8s ease-out;
         }
-
         .about-section.show {
             opacity: 1;
             transform: translateY(0);
         }
-
         .footer {
             background: rgba(255,255,255,0.05);
             padding: 20px;
             margin-top: 50px;
             border-top: 1px solid rgba(255,255,255,0.2);
         }
-
         .social-icons {
             margin-top: 10px;
             display: flex;
             justify-content: center;
             gap: 20px;
         }
-
         .social-icons a img {
             width: 40px;
             height: 40px;
             transition: all 0.3s ease;
         }
-
         .social-icons a:hover img {
             transform: scale(1.2);
         }
-
+        .support-icon {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+        .support-icon:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+        .support-icon img {
+            width: 30px;
+            height: 30px;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
     </style>
 </head>
 <body>
-
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+        <a href="#">درباره ما</a>
+        <a href="#">اعتماد ما</a>
+        <a href="#">استور شاپ</a>
+        <a href="#">شایان</a>
+    </div>
     <div class="main-section">
         <h1>به سایت واسطه فانوس خوش آمدید</h1>
         <div class="main-buttons">
@@ -112,45 +165,35 @@
             <a href="https://rubika.ir/HEFAZAT_FANOS" class="btn" target="_blank">@HEFAZAT_FANOS</a>
         </div>
     </div>
-
     <div class="about-section">
         <h2>درباره واسطه فانوس</h2>
-        <p>
-            با سلام خدمت همه مشتری‌های فانوس<br>
-            بنده شایان، ۳ سال در حوزه واسطه‌گری می‌باشم.<br>
-            در بسیاری از بازارهای معتبر فعالیت داشتم و کلی هویت عوض کردم تا امروز با هویت فانوس در کنار شما باشم.<br>
-            هدف من اینه که با کمک شما بریم بالا و معروف بشیم.<br>
-            ممنونم که ما رو برای معامله‌هاتون انتخاب می‌کنید.
-        </p>
+        <p>واسطه فانوس با بیش از هزار ها نماد معتبر داخل انواع بازار معتبر معاملاتی روبیکا بوده و سالهاست که فانوس تو حوزه واسطه گری میباشد.</p>
     </div>
-
+    <a href="https://rubika.ir/ADMIN_FANOS" class="support-icon" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/725/725643.png" alt="پشتیبانی">
+    </a>
     <div class="footer">
-        <p>
-            واسطه فانوس با بیش از هزار ها نماد معتبر<br>
-            داخل انواع بازارهای معتبر معاملاتی روبیکا بوده<br>
-            سالهاست که فانوس تو حوزه واسطه‌گری می‌باشد.
-        </p>
         <div class="social-icons">
             <a href="https://rubika.ir/FANOS_VASETE" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Rubika">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111710.png" alt="Rubika">
             </a>
             <a href="https://t.me/FANOS_VASETE" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
             </a>
         </div>
     </div>
-
     <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('show');
+        }
         window.addEventListener('scroll', () => {
             const aboutSection = document.querySelector('.about-section');
             const sectionPosition = aboutSection.getBoundingClientRect().top;
             const screenPosition = window.innerHeight / 1.2;
-
             if(sectionPosition < screenPosition) {
                 aboutSection.classList.add('show');
             }
         });
     </script>
-
 </body>
 </html>
