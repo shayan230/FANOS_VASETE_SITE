@@ -142,6 +142,31 @@
         .menu.show {
             right: 0;
         }
+
+        .footer {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .social-icons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a img {
+            width: 40px;
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover img {
+            transform: scale(1.2);
+        }
+
     </style>
 </head>
 <body>
@@ -175,16 +200,25 @@
         <a href="#">شایان</a>
     </div>
 
-    <!-- لینک روبیکا مستقیم (هم لینک عادی و هم intent) -->
     <a href="https://rubika.ir/ADMIN_FANOS" class="support-icon" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/725/725643.png" alt="پشتیبانی">
     </a>
-    <!-- اگر میخوای به صورت intent باز بشه اینو فعال کن -->
-    <!-- 
-    <a href="intent://user/ADMIN_FANOS#Intent;scheme=rubika;package=ir.resaneh1.iptv;end" class="support-icon">
-        <img src="https://cdn-icons-png.flaticon.com/512/725/725643.png" alt="پشتیبانی">
-    </a> 
-    -->
+
+    <div class="footer">
+        <p>
+            واسطه فانوس با بیش از هزار ها نماد معتبر<br>
+            داخل انواع بازارهای معتبر معاملاتی روبیکا بوده<br>
+            سالهاست که فانوس تو حوزه واسطه‌گری می‌باشد.
+        </p>
+        <div class="social-icons">
+            <a href="https://rubika.ir/FANOS_VASETE" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111710.png" alt="Rubika">
+            </a>
+            <a href="https://t.me/FANOS_VASETE" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+            </a>
+        </div>
+    </div>
 
     <script>
         function toggleMenu() {
@@ -203,4 +237,4 @@
     </script>
 
 </body>
-            </html>
+    </html>
